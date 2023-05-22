@@ -1,4 +1,4 @@
-namespace BlogApp.Application.Responses;
+namespace Taskmanagement.Application.Responses;
 
 public class Result<T>
 {
