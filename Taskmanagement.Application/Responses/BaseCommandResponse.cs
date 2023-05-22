@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.Application.Responses
+namespace Taskmanagement.Application.Responses
 {
     public class BaseCommandResponse
     {
