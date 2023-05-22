@@ -5,9 +5,9 @@ using Taskmanagement.Application.Features.Task.DTOs;
 using Taskmanagement.Application.Responses;
 using MediatR;
 
-namespace BlogApp.Application.Features.Task.CQRS.Handlers;
+namespace Taskmanagement.Application.Features.Task.CQRS.Handlers;
 
-public class GetTaskListQueryHandler : IRequestHandler<GetTaskListQuery, Result<List<TagListDto>>>
+public class GetTaskListQueryHandler : IRequestHandler<GetTaskListQuery, Result<List<TaskListDto>>>
 {
 
     private readonly IUnitOfWork _unitOfWork;

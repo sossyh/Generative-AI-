@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.Application.Exceptions
+namespace Taskmanagement.Application.Exceptions
 {
     public class NotFoundException : ApplicationException
     {

@@ -15,7 +15,7 @@ namespace Taskmanagement.Application.Features.Task.DTOs.Validators
         {
             RuleFor(p => p.Id)
            .GreaterThan(0)
-           .MustAsync(async (id, token) => await unitOfWork.BlogRepository.Exists(id)).WithMessage($"Task not found");
+           .MustAsync(async (id, token) => await unitOfWork.TaskRepository.Exists(id)).WithMessage($"Task not found");
         } 
     }
 }

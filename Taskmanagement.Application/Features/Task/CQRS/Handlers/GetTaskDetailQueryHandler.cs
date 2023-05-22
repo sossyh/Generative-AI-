@@ -1,27 +1,27 @@
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Features.Tags.DTOs;
-using BlogApp.Application.Features.Tags.CQRS.Queries;
+using Taskmanagement.Application.Contracts.Persistence;
+using Taskmanagement.Application.Features.Task.DTOs;
+using Taskmanagement.Application.Features.Task.CQRS.Queries;
 using AutoMapper;
-using BlogApp.Application.Responses;
+using Taskmanagement.Application.Responses;
 using MediatR;
 
-namespace BlogApp.Application.Features.Tags.CQRS.Queries;
+namespace Taskmanagement.Application.Features.Task.CQRS.Queries;
 
-public class GetTagDetailsQueryHandler: IRequestHandler<GetTagDetailsQuery, Result<TagDetailsDto?>>
+public class GetTaskDetailsQueryHandler: IRequestHandler<GetTaskDetailsQuery, Result<TaskDetailsDto?>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public GetTagDetailsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+    public GetTaskDetailsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
-    public async Task<Result<TagDetailsDto?>> Handle(GetTagDetailsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<TaskDetailsDto?>> Handle(GetTaskDetailsQuery request, CancellationToken cancellationToken)
     {
-        var tag = await _unitOfWork.TagRepository.Get(request.Id);
-        var TagDto = _mapper.Map<TagDetailsDto>(tag);
-        return new Result<TagDetailsDto?>() { Value = TagDto, Message = "Successful", Success = true, };
+        var task = await _unitOfWork.TaskRepository.Get(request.Id);
+        var TaskDto = _mapper.Map<TaskDetailsDto>(task);
+        return new Result<TaskDetailsDto?>() { Value = TaskDto, Message = "Successful", Success = true, };
     }
 }   
