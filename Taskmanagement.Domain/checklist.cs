@@ -9,6 +9,6 @@ namespace Taskmanagement.Domain.Checklists
         public string Title { get; set; }
         public int AssociatedTaskId { get; set; }
         public bool Status { get; set; }
-        public Task AssociatedTask { get; set; } // Navigation property for the associated task
+        // public Task AssociatedTask { get; set; } // Navigation property for the associated task
     }
 }
