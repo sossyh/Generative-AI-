@@ -5,21 +5,21 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Features.Users.CQRS.Commands;
-using BlogApp.Application.Features.Users.CQRS.Handlers;
-using BlogApp.Application.Features.Users.DTOs;
-using BlogApp.Application.Features.Users.DTOs.Validators;
-using BlogApp.Application.Responses;
-using BlogApp.Application.Profiles;
-using BlogApp.Tests.Mocks;
-using BlogApp.Domain;
+using Taskmanagement.Application.Persistence;
+using Taskmanagement.Application.Features.User.CQRS.Commands;
+using Taskmanagement.Application.Features.User.CQRS.Handlers;
+using Taskmanagement.Application.Features.Users.DTOs;
+using Taskmanagement.Application.Features.Users.DTOs.Validators;
+using Taskmanagement.Application.Responses;
+using Taskmanagement.Application.Profiles;
+using Taskmanagement.Tests.Mocks;
+using Taskmanagement.Domain;
 using FluentAssertions;
 using Moq;
 using Shouldly;
 using Xunit;
 
-namespace BlogApp.Tests.Users.Command
+namespace Taskmanagement.Tests.User.Command
 {
      public class Create_UserCommandHandlerTests
     {
@@ -44,7 +44,7 @@ namespace BlogApp.Tests.Users.Command
 
             _userDto = new Create_UserDto
             {
-                AccountId = "1",
+                Id = "1",
                 FirstName = "John",
                 LastName = "Doe",
                 Email = "johndoe@example.com",
@@ -53,7 +53,7 @@ namespace BlogApp.Tests.Users.Command
 
             _invalidUserDto = new Create_UserDto
             {
-                AccountId = "2",
+                Id = "2",
                 FirstName = "",
                 LastName = "Doe",
                 Email = "johndoe@example.com",

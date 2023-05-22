@@ -3,15 +3,15 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Features.Users.CQRS.Handlers;
-using BlogApp.Application.Features.Users.CQRS.Queries;
-using BlogApp.Application.Features.Users.DTOs;
-using BlogApp.Domain;
+using Taskmanagement.Application.Persistence;
+using Taskmanagement.Application.Features.User.CQRS.Handlers;
+using Taskmanagement.Application.Features.User.CQRS.Queries;
+using Taskmanagement.Application.Features.User.DTOs;
+using Taskmanagement.Domain;
 using Moq;
 using Xunit;
 
-namespace BlogApp.Tests.Users.Query
+namespace Taskmanagement.Tests.Users.Query
 {
     public class Get_UserListQueryHandlerTests
     {

@@ -1,14 +1,14 @@
 using AutoMapper;
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Features.Users.CQRS.Handlers;
-using BlogApp.Application.Features.Users.CQRS.Queries;
-using BlogApp.Application.Features.Users.DTOs;
-using BlogApp.Domain;
+using Taskmanagement.Application.Persistence;
+using Taskmanagement.Application.Features.User.CQRS.Handlers;
+using Taskmanagement.Application.Features.User.CQRS.Queries;
+using Taskmanagement.Application.Features.Users.DTOs;
+using Taskmanagement.Domain;
 using Moq;
 using System.Threading;
 using Xunit;
 
-namespace BlogApp.Tests.Users.Query
+namespace Taskmanagement.Tests.User.Query
 {
     public class Get_UserDetailQueryHandlerTests
     {

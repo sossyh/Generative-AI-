@@ -1,20 +1,20 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Exceptions;
-using BlogApp.Application.Features.Users.CQRS.Commands;
-using BlogApp.Application.Features.Users.DTOs.Validators;
-using BlogApp.Application.Features.Users.DTOs;
-using BlogApp.Application.Features.Users.CQRS.Handlers;
-using BlogApp.Domain;
+using Taskmanagement.Application.Persistence;
+using Taskmanagement.Application.Exceptions;
+using Taskmanagement.Application.Features.User.CQRS.Commands;
+using Taskmanagement.Application.Features.User.DTOs.Validators;
+using Taskmanagement.Application.Features.Users.DTOs;
+using Taskmanagement.Application.Features.User.CQRS.Handlers;
+using Taskmanagement.Domain;
 using FluentAssertions;
 using MediatR;
 using Moq;
 using Xunit;
 
 
-namespace BlogApp.Tests.Users.Command
+namespace Taskmanagement.Tests.Users.Command
 {
     public class Update_UserCommandHandlerTests
     {

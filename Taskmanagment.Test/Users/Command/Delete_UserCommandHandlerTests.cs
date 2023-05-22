@@ -1,17 +1,17 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogApp.Application.Contracts.Persistence;
-using BlogApp.Application.Exceptions;
-using BlogApp.Application.Features.Users.CQRS.Commands;
-using BlogApp.Application.Features.Users.CQRS.Handlers;
-using BlogApp.Application.Profiles;
-using BlogApp.Tests.Mocks;
+using Taskmanagement.Application.Persistence;
+using Taskmanagement.Application.Exceptions;
+using Taskmanagement.Application.Features.User.CQRS.Commands;
+using Taskmanagement.Application.Features.User.CQRS.Handlers;
+using Taskmanagement.Application.Profiles;
+using Taskmanagement.Tests.Mocks;
 using Moq;
 using Shouldly;
 using Xunit;
 
-namespace BlogApp.Tests.Users.Command
+namespace Taskmanagement.Tests.User.Command
 {
     public class Delete_UserCommandHandlerTests
     {
