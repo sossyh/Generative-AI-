@@ -17,6 +17,8 @@ namespace Taskmanagement.Persistence
         public DbSet<User> User { get; set; }
         public DbSet<Task> Task { get; set; }
         public DbSet<Checklist> Checklist { get; set; }
+
+        
         
         public TaskmanagementDbContext(DbContextOptions<TaskmanagementDbContext> options)
            : base(options)
@@ -24,6 +26,37 @@ namespace Taskmanagement.Persistence
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             // AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
         }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<Task>()
+                .HasMany(t => t.Checklists)
+                .WithOne(c => c.Task)
+                .HasForeignKey(c => c.AssociatedTaskId)
+                .IsRequired();
+
+            modelBuilder.Entity<Task>()
+                .HasOne(t => t.Owner)
+                .WithMany(u => u.Tasks)
+                .HasForeignKey(t => t.OwnerId)
+                .IsRequired();
+
+            modelBuilder.Entity<Checklist>()
+                .HasOne(c => c.Task)
+                .WithMany(t => t.Checklists)
+                .HasForeignKey(c => c.AssociatedTaskId)
+                .IsRequired();
+
+            modelBuilder.Entity<Checklist>()
+                .HasOne(c => c.Owner)
+                .WithMany(u => u.Checklists)
+                .HasForeignKey(c => c.OwnerId)
+                .IsRequired();
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
